@@ -1,0 +1,778 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ body{
+  min-height: 200vh;
+  width: 100%;
+  font-size: 15px;
+  line-height: 1.5;
+  background-color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(240, 243, 255);
+ }
+
+ 
+
+ a{
+    color: blue;
+    text-decoration: none;
+ }
+ 
+ header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    transition: 0.5s ease-in-out;
+    z-index: 99999;
+ }
+
+ header.sticky {
+   background-color: blue;
+ }
+
+ nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    max-width: 1140px;
+    margin: auto;
+    padding: 10px 20px;
+ }
+
+nav .logo {
+   font-size: 25px;
+   color: white;
+   font-weight: 700;
+}
+ nav ul {
+    display: flex;
+    align-items: center;
+    padding-top: 3px;
+    gap: 40px;
+    list-style: none;
+ }
+
+ /* nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+ } */
+
+ nav ul li a {
+   text-decoration: none;
+   color: white;
+   font-size: 18px;
+   font-weight: 500;
+}
+
+ nav .pop-up-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid white;
+    font-weight: 700;
+ } 
+
+ nav .pop-up-btn:active {
+    transform: scale(0.89);
+ }
+
+ nav .hamburger {
+   cursor: pointer;
+   display: none;
+ }
+
+ nav .hamburger .bar{
+    display: block;
+    background-color: white;
+    width: 30px;
+    height: 3px;
+    margin-top: 5px;
+    transition: all 0.3s ease-in-out;
+ }
+
+
+ .container{
+      z-index: 9999;
+      display: flex;
+      position: fixed;
+      align-items: center;
+      justify-content: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /* background-color: red; */
+      
+      
+ }
+
+
+ .wrapper {
+   position: relative;
+    width: 350px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    justify-content: center;
+    box-shadow: 0px 5px 15px rgb(0, 0, 0, 0.35);
+    border-radius: 10px;
+    padding: 30px;
+    overflow: hidden;
+    transition: transform 0.3s ease, height 0.5s ease;
+    transform: scale(0);
+ }
+
+ 
+
+ .wrapper.active {
+   height: 470px;
+ }
+
+ .wrapper.active .form-box.login {
+   transform: translateX(-400px);
+   transition: none;
+ }
+
+ .wrapper.active .form-box.register {
+   position: absolute;
+   transform: translateX(0);
+   transition: transform 0.5s ease;
+ }
+
+ .wrapper .form-box.login {
+    transform: translateX(0);
+    transition: none;
+    transition: transform 0.5s ease;
+ }
+
+ .wrapper .form-box.register {
+   position: absolute;
+   transform: translateX(400px);
+ }
+
+
+
+ .wrapper .form-box h2{
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.wrapper .form-box .form-input input{
+    margin: 10px 0;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    border:  1.5px solid gray;
+}
+
+.form-box .form-input label {
+    color: black;
+}
+
+.forget_pw {
+    display: flex;
+    align-items: center; gap: 30px;
+    justify-content: space-between;
+}
+
+.checkbox input {
+    accent-color: black;
+}
+
+.checkbox label{
+    color:black;
+}
+
+.btn {
+    margin: 20px 0;
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+.signup {
+    text-align: center;
+}
+
+.close-btn {
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    
+}
+
+.close-btn img{
+  width: 25px;
+  background-color: black;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.section_1 {
+   background: url('./img/pexels-asad-photo-maldives-1450354.jpg') no-repeat center center/cover;
+   width: 100%;
+   height: 80vh;
+   z-index: -1;
+   
+}
+
+.section_1 .text{
+   color: white;
+   position: absolute;
+   top: 20%;
+   left: 10%;
+   z-index: 1;
+}
+
+.section_1 .text p {
+   width: 60%;
+   margin-top: 20px;
+}
+
+.section_2 {
+   position: relative;
+   max-width: 1140px;
+   margin: auto;
+   margin-top: 50px;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   width: 80%;
+   align-items: center;
+   justify-content: center;
+}
+.section_2 .section_2-col_1 {
+   background: url('./img/pexels-teona-swift-6913373.jpg') no-repeat center center/cover ;
+   height: 100%;
+   width: 100%;
+}
+.section_2 .section_2-col_1 .text {
+   margin: 20px 60px 5px 60px ;
+   line-height: 1.2;
+}
+
+.section_2 .section_2-col_1 .text h2 {
+   font-weight: 500;
+}
+
+.section_2 .section_2-col_1 .text p{
+   margin: 15px 0;
+}
+
+.section_2 .section_2-col_1 .text button{
+   padding: 10px 20px;
+   background: transparent;
+   border: none;
+   outline: none;
+   border: 1px solid black;
+   transition: 0.3s ease-in-out;
+}
+
+.section_2 .section_2-col_1 .text button:hover {
+  background-color: black;
+  color: white;
+}
+
+.section_2 .section_2-col_2 {
+   width: 100%;
+}
+
+.section_2 .section_2-col_2 img {
+   width: 100%;
+
+}
+
+.section_3 {
+   position: relative;
+   max-width: 1140px;
+   margin: auto;
+   margin-top: 50px;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   width: 80%;
+   align-items: center;
+   justify-content: center;
+}
+
+.section_3 .section_3-col_1 {
+   background: url('./img/pexels-haley-black-2087391.jpg') no-repeat center center/cover ;
+   height: 100%;
+   width: 100%;
+   padding: 40px;
+}
+
+.section_3 .section_3-col_1 .text {
+   /* margin: 20px 60px 5px 60px ; */
+   display: flex;
+   flex-direction: column;
+   line-height: 1.2;
+   align-items: flex-end;
+   justify-content: center;
+   color: white;
+   text-align: right;
+   
+}
+
+.section_3 .section_3-col_1 .text h2 {
+   font-weight: 500;
+}
+
+.section_3 .section_3-col_1 .text p{
+   margin: 15px 0;
+   width: 50%;
+}
+
+.section_3 .section_3-col_2 {
+   background-color: white;
+   height: 100%;
+   width: 100%;
+}
+.section_3 .section_3-col_2 .text {
+   margin: 20px 60px 5px 60px ;
+   line-height: 1.2;
+}
+
+.section_3 .section_3-col_2 .text h2 {
+   font-weight: 500;
+}
+
+.section_3 .section_3-col_2 .text p{
+   margin: 15px 0;
+}
+
+.section_3 .section_3-col_2 .text button{
+   padding: 10px 20px;
+   background: transparent;
+   border: none;
+   outline: none;
+   border: 1px solid black;
+   transition: 0.3s ease-in-out;
+}
+
+.section_3 .section_3-col_2 .text button:hover {
+  background-color: black;
+  color: white;
+}
+
+.section_4 {
+   position: relative;
+   max-width: 1140px;
+   margin: 0 auto;
+   margin-top: 50px;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   width: 80%;
+   align-items: center;
+   justify-content: center;
+}
+
+.section_4 .section_4-col_1 {
+   background: url('./img/pexels-asad-photo-maldives-1268855.jpg') no-repeat center center/cover ;
+   height: 100%;
+   width: 100%;
+   padding: 40px;
+}
+
+.section_4 .section_4-col_1 .text {
+   /* margin: 20px 60px 5px 60px ; */
+   display: flex;
+   flex-direction: column;
+   line-height: 1.2;
+   align-items: flex-start;
+   justify-content: center;
+   color: white;
+   text-align: left;
+   
+}
+
+.section_4 .section_4-col_1 .text h2 {
+   font-weight: 500;
+}
+
+.section_4 .section_4-col_1 .text p{
+   margin: 15px 0;
+   width: 50%;
+}
+
+.section_4 .section_4-col_2 {
+   height: 100%;
+   width: 100%;
+   background-color: white;
+}
+.section_4 .section_4-col_2 .text {
+   margin: 20px 60px 5px 60px ;
+   line-height: 1.2;
+}
+
+.section_4 .section_4-col_2 .text h2 {
+   font-weight: 500;
+}
+
+.section_4 .section_4-col_2 .text p{
+   margin: 15px 0;
+}
+
+.section_4 .section_4-col_2 .text button{
+   padding: 10px 20px;
+   background: transparent;
+   border: none;
+   outline: none;
+   border: 1px solid black;
+   transition: 0.3s ease-in-out;
+}
+
+.section_4 .section_4-col_2 .text button:hover {
+  background-color: black;
+  color: white;
+}
+
+.section_5 {
+   display: flex;
+   /* align-items: center; */
+   justify-content: center;
+   flex-direction: column;
+   max-width: 1140px;
+   margin: 30px auto;
+   width: 80%;
+ }
+ 
+ .section_5 h2{
+     text-align: left;
+     font-weight: 500;
+     margin-bottom: 20px;
+ }
+ 
+ .images {
+   width: 100%;
+   display: grid;
+   align-items: center;
+   justify-content: center;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 10px;
+ }
+ 
+ .images img{
+     width: 100%;
+     object-fit: cover;
+     transition: all 0.5s ease-in-out;
+ }
+
+ .images img:hover{
+   transform: scale(1.5);
+ }
+
+
+
+.acc {
+   max-width: 1140px;
+   width: 100%;
+   margin: 40px auto;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+
+}
+
+.acc h2 {
+   text-align: center;
+   margin: 20px 0;
+   color: white;
+   padding: 10px;
+   border-radius: 10px;
+   background-color: blue;
+
+}
+
+.accordion {
+   /* padding: 30px; */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: -20px;
+}
+
+.content-box {
+   margin-bottom: -20px;
+} 
+
+.content-box.showfaqs{
+   margin-bottom: 20px;
+}
+
+.content-box .label {
+   background-color: blue;
+   padding: 10px;
+   cursor: pointer;
+   color: white;
+   font-weight: 500;
+   font-size: 20px;
+   cursor: pointer;
+   box-shadow:  0px 4px 15px rgb(0, 0, 0, 0.6);
+}
+
+.content-box .label::before {
+   content: '+';
+   position: absolute;
+   right: 15%;
+   font-size: 20px;
+   font-weight: bolder;
+   cursor: pointer;
+   
+}
+
+.content-box.showfaqs .label::before {
+   content: '-';
+   position: absolute;
+   right: 15%;
+   font-size: 20px;
+   font-weight: bolder;
+}
+
+
+.content-box .content {
+   background: transparent;
+   padding: 10px;
+   height: 0;
+   overflow: hidden;
+   line-height: 2;
+   transition: all 0.5s ease-in-out;
+}
+
+.content-box.showfaqs .content {
+   padding: 10px;
+   height: 130px;
+   box-shadow:  0px 4px 15px rgb(0, 0, 0, 0.6);
+}
+
+
+
+
+
+@media(max-width: 768px) {
+
+   nav .hamburger {
+      cursor: pointer;
+      display: block;
+    }
+   
+    nav .hamburger .bar{
+       display: block;
+       background-color: white;
+       width: 25px;
+       height: 3px;
+       margin-top: 5px;
+       transition: all 0.3s ease-in-out;
+    }
+
+    nav .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    nav .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+  }
+
+  nav .hamburger.active .bar:nth-child(3) {
+   transform: translateY(-8px) rotate(-45deg);
+}
+
+nav .logo {
+   font-size: 18px;
+   color: white;
+   font-weight: 700;
+}
+
+nav ul.list {
+   display: flex;
+   align-items: center;
+   width: 100%;
+   flex-direction: column;
+   padding-top: 3px;
+   gap: 40px;
+   height: 100vh;
+   padding: 30px;
+   list-style: none;
+   position: absolute;
+   background-color: rgb(19, 16, 16);
+   top: 58px;
+   left: 0;
+   transform: translateX(-50000px);
+   transition: 0.5s ease-in-out;
+}
+
+nav ul.list.show{
+   transform: translateX(0);
+}
+
+nav ul li a {
+   text-decoration: none;
+   color: white;
+   font-size: 18px;
+   font-weight: 500;
+}
+
+nav .pop-up-btn {
+   margin-top: 5px;
+   padding: 5px 15px;
+   border-radius: 10px;
+   cursor: pointer;
+   color: white;
+   border: none;
+   outline: none;
+   background-color: transparent;
+   border: 2px solid white;
+   font-weight: 700;
+   position: absolute;
+   right: 70px;
+} 
+
+nav .pop-up-btn:active {
+   transform: scale(0.89);
+}
+
+.section_1 {
+   background: url('./img/pexels-asad-photo-maldives-1450354.jpg') no-repeat center center/cover;
+   width: 100%;
+   height: 100vh;
+   z-index: -1;
+   
+}
+
+.section_1 .text{
+   color: white;
+   position: absolute;
+   top: 20%;
+  
+   z-index: 1;
+   text-align: center;
+}
+
+.section_1 .text h2 {
+   width: 90%;
+
+} 
+
+.section_1 .text p {
+   width: 90%;
+   margin-top: 30px;
+}
+
+.section_2 {
+   position: relative;
+   max-width: 1140px;
+   margin: auto;
+   margin-top: 20px;
+   display: grid;
+   grid-template-columns: 1fr;
+   width: 90%;
+   align-items: center;
+   justify-content: center;
+   gap: 20px;
+}
+.section_2 .section_2-col_1 {
+   padding-bottom: 20px;
+}
+
+.section_3 {
+   position: relative;
+   max-width: 1140px;
+   margin: auto;
+   margin-top: 20px;
+   display: grid;
+   grid-template-columns: 1fr;
+   width: 90%;
+   align-items: center;
+   justify-content: center;
+   gap: 20px;
+}
+
+.section_4 {
+   position: relative;
+   max-width: 1140px;
+   margin: auto;
+   margin-top: 20px;
+   display: grid;
+   grid-template-columns: 1fr;
+   width: 90%;
+   align-items: center;
+   justify-content: center;
+   gap: 20px;
+}
+
+.section_5 {
+   display: flex;
+   /* align-items: center; */
+   justify-content: center;
+   flex-direction: column;
+   max-width: 1140px;
+   margin: 30px auto;
+   width: 90%;
+ }
+
+.acc {
+   max-width: 1140px;
+   width: 90%;
+   margin: 40px auto;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+}
+
+.content-box .label::before {
+   content: '+';
+   position: absolute;
+   right: 10%;
+   font-size: 20px;
+   font-weight: bolder;
+   cursor: pointer;
+   
+}
+
+.content-box.showfaqs .label::before {
+   content: '-';
+   position: absolute;
+   right: 10%;
+   font-size: 20px;
+   font-weight: bolder;
+}
+
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
