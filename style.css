@@ -114,8 +114,8 @@ nav .logo {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      /* background-color: red; */
-      
+      background-color: red;
+      height: 0;
       
  }
 
@@ -482,6 +482,10 @@ nav .logo {
      text-align: left;
      font-weight: 500;
      margin-bottom: 20px;
+     transition: transform 0.4s ease-in-out;
+ }
+ .section_5 h2:hover {
+   
  }
  
  .images {
@@ -494,13 +498,14 @@ nav .logo {
  }
  
  .images img{
+   border-radius: 5px;
      width: 100%;
      object-fit: cover;
      transition: all 0.5s ease-in-out;
  }
 
  .images img:hover{
-   transform: scale(1.5);
+   transform: scale(1.5) rotate(10deg);
  }
 
 
@@ -524,7 +529,14 @@ nav .logo {
    padding: 10px;
    border-radius: 10px;
    background-color: blue;
+   transform: rotate(20deg);
+   transition: 0.5s ease-in-out;
+   box-shadow: 0px 2px 15px rgb(0, 0, 0, 0.4);
 
+}
+
+.acc h2:hover {
+   transform: rotate(40deg);
 }
 
 .accordion {
@@ -535,6 +547,7 @@ nav .logo {
    justify-content: center;
    gap: -20px;
 }
+
 
 .content-box {
    margin-bottom: -20px;
@@ -849,34 +862,74 @@ nav .pop-up-btn:active {
  }
  
  .images img{
+   border-radius: 5px;
      width: 100%;
      object-fit: cover;
      transition: all 0.5s ease-in-out;
  }
 
  .images img:hover{
-   transform: scale(1.2); 
+   transform: scale(1.2) rotate(10deg);
+    }
  }
 
-.acc {
+ .acc {
    max-width: 1140px;
    width: 90%;
-   margin: 0 auto;
+   margin: 40px auto;
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
 
+
 }
 
 .acc h2 {
-   font-size: 18px;
+   text-align: center;
+   margin: 20px 0;
+   color: white;
+   padding: 10px;
+   border-radius: 10px;
+   background-color: blue;
+   transform: rotate(20deg);
+   box-shadow: 0px 2px 15px rgb(0, 0, 0, 0.4);
+
+}
+
+.accordion { 
+   /* padding: 30px; */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: -20px;
+}
+
+
+.content-box {
+   margin-bottom: -20px;
+} 
+
+.content-box.showfaqs{
+   margin-bottom: 20px;
+}
+
+.content-box .label {
+   background-color: blue;
+   padding: 10px;
+   cursor: pointer;
+   color: white;
+   font-weight: 500;
+   font-size: 20px;
+   cursor: pointer;
+   box-shadow:  0px 4px 15px rgb(0, 0, 0, 0.6);
 }
 
 .content-box .label::before {
    content: '+';
    position: absolute;
-   right: 10%;
+   right: 15%;
    font-size: 20px;
    font-weight: bolder;
    cursor: pointer;
@@ -886,9 +939,25 @@ nav .pop-up-btn:active {
 .content-box.showfaqs .label::before {
    content: '-';
    position: absolute;
-   right: 10%;
+   right: 15%;
    font-size: 20px;
    font-weight: bolder;
+}
+
+
+.content-box .content {
+   background: transparent;
+   padding: 10px;
+   height: 0;
+   overflow: hidden;
+   line-height: 2;
+   transition: all 0.5s ease-in-out;
+}
+
+.content-box.showfaqs .content {
+   padding: 10px;
+   height: 130px;
+   box-shadow:  0px 4px 15px rgb(0, 0, 0, 0.6);
 }
 
 footer {
@@ -924,15 +993,4 @@ footer {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
 
