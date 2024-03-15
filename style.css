@@ -4,15 +4,18 @@
     box-sizing: border-box;
 }
  body{
-  min-height: 200vh;
-  width: 100%;
+
   font-size: 15px;
   line-height: 1.5;
   background-color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: rgb(240, 243, 255);
+  transition: 0.3s ease-in-out;
  }
 
+ ul {
+   list-style: none;
+ }
  
 
  a{
@@ -297,11 +300,13 @@ nav .logo {
 
 .section_2 .section_2-col_2 {
    width: 100%;
+   height: 100%;
 }
 
 .section_2 .section_2-col_2 img {
    width: 100%;
-
+   height: 100%;
+   object-fit: cover;
 }
 
 .section_3 {
@@ -317,7 +322,7 @@ nav .logo {
 }
 
 .section_3 .section_3-col_1 {
-   background: url('./img/pexels-haley-black-2087391.jpg') no-repeat center center/cover ;
+   background: url('./img/pexels-julie-aagaard-2467285.jpg') no-repeat center center/cover ;
    height: 100%;
    width: 100%;
    padding: 40px;
@@ -332,7 +337,7 @@ nav .logo {
    justify-content: center;
    color: white;
    text-align: right;
-   
+   text-shadow: 2px 2px 5px black;
 }
 
 .section_3 .section_3-col_1 .text h2 {
@@ -389,7 +394,7 @@ nav .logo {
 }
 
 .section_4 .section_4-col_1 {
-   background: url('./img/pexels-asad-photo-maldives-1268855.jpg') no-repeat center center/cover ;
+   background: url('./img/photo-1549294413-26f195200c16.jpeg') no-repeat center center/cover ;
    height: 100%;
    width: 100%;
    padding: 40px;
@@ -404,7 +409,7 @@ nav .logo {
    justify-content: center;
    color: white;
    text-align: left;
-   
+   text-shadow: 2px 2px 5px black;
 }
 
 .section_4 .section_4-col_1 .text h2 {
@@ -449,14 +454,29 @@ nav .logo {
 }
 
 .section_5 {
-   display: flex;
+   /* display: flex; */
    /* align-items: center; */
-   justify-content: center;
-   flex-direction: column;
+   /* justify-content: center;
+   flex-direction: column; */
    max-width: 1140px;
    margin: 30px auto;
    width: 80%;
  }
+
+ .section_5  button{
+   padding: 10px 20px;
+   background: transparent;
+   border: none;
+   outline: none;
+   border: 1px solid black;
+   transition: 0.3s ease-in-out;
+   margin-top: 20px;
+}
+
+.section_5 button:hover {
+  background-color: black;
+  color: white;
+}
  
  .section_5 h2{
      text-align: left;
@@ -487,7 +507,7 @@ nav .logo {
 
 .acc {
    max-width: 1140px;
-   width: 100%;
+   width: 80%;
    margin: 40px auto;
    display: flex;
    flex-direction: column;
@@ -569,10 +589,84 @@ nav .logo {
    box-shadow:  0px 4px 15px rgb(0, 0, 0, 0.6);
 }
 
+footer {
+   background-color: black;
+   width: 100%;
+   display: flex;
+   align-self: center;
+   justify-content: center;
+   text-align: center;
+}
+
+.footer {
+   max-width: 1140px;
+   width: 100%;
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   padding: 30px 0;
+   align-items: center;
+   justify-content: center;
+}
+
+.footer ul li a {
+   color: white;
+    font-weight: 500;
+}
+
+.col-3 ul li a.travel{
+   font-size: 30px;
+}
+
+/* laptop */
+@media(max-width: 1024px) {
+   .section_2 {
+      position: relative;
+      max-width: 1140px;
+      margin: auto;
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 80%;
+      align-items: center;
+      justify-content: center;
+   }
+   .section_2 .section_2-col_1 {
+      background: url('./img/pexels-teona-swift-6913373.jpg') no-repeat center center/cover ;
+      height: 100%;
+      width: 100%;
+   }
+
+
+   .section_2 .section_2-col_2 {
+      width: 100%;
+      height: 100%;
+   }
+   
+   .section_2 .section_2-col_2 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+
+   .acc {
+      max-width: 1140px;
+      width:80%;
+      margin: 40px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+   
+   
+   }
+   
+  
+}
 
 
 
-
+/* tablet */
 @media(max-width: 768px) {
 
    nav .hamburger {
@@ -618,7 +712,7 @@ nav ul.list {
    list-style: none;
    position: absolute;
    background-color: rgb(19, 16, 16);
-   top: 58px;
+   top: 45px;
    left: 0;
    transform: translateX(-50000px);
    transition: 0.5s ease-in-out;
@@ -710,6 +804,10 @@ nav .pop-up-btn:active {
    gap: 20px;
 }
 
+.section_3-col_2 {
+   padding-bottom: 20px;
+}
+
 .section_4 {
    position: relative;
    max-width: 1140px;
@@ -723,6 +821,10 @@ nav .pop-up-btn:active {
    gap: 20px;
 }
 
+.section_4-col_2 {
+   padding-bottom: 20px;
+}
+
 .section_5 {
    display: flex;
    /* align-items: center; */
@@ -733,15 +835,42 @@ nav .pop-up-btn:active {
    width: 90%;
  }
 
+ .section_5  h2 {
+   font-size: 18px;
+ }
+
+ .images {
+   width: 100%;
+   display: grid;
+   align-items: center;
+   justify-content: center;
+   grid-template-columns: 1fr 1fr;
+   gap: 10px;
+ }
+ 
+ .images img{
+     width: 100%;
+     object-fit: cover;
+     transition: all 0.5s ease-in-out;
+ }
+
+ .images img:hover{
+   transform: scale(1.2); 
+ }
+
 .acc {
    max-width: 1140px;
    width: 90%;
-   margin: 40px auto;
+   margin: 0 auto;
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
 
+}
+
+.acc h2 {
+   font-size: 18px;
 }
 
 .content-box .label::before {
@@ -762,7 +891,38 @@ nav .pop-up-btn:active {
    font-weight: bolder;
 }
 
-   
+footer {
+   margin-top: 30px;
+   background-color: black;
+   width: 100%;
+   display: flex;
+   align-self: center;
+   justify-content: center;
+   text-align: center;
+}
+
+.footer {
+   max-width: 1140px;
+   width: 80%;
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: 1fr ;
+   padding: 30px 0;
+   align-items: center;
+   justify-content: center;
+   gap: 50px;
+}
+
+.footer ul li a {
+   color: white;
+    font-weight: 500;
+}
+
+.col-3 ul li a.travel{
+   font-size: 30px;
+} 
+
+
 }
 
 
